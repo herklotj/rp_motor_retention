@@ -45,9 +45,21 @@ view: v_prem_written_recon {
       sql: ${TABLE}.net_premium_aap ;;
       value_format: "#.00;($#.00)"
   }
+
+  measure: net_prem_ice {
+    type:  sum
+    sql: ${TABLE}.net_premium_ice ;;
+    value_format: "#.00;($#.00)"
+  }
+
   measure: difference {
     type:  average
     sql:1- ${TABLE}.pmid_net_written_premimum /${TABLE}.net_premium_aap ;;
+    value_format: "0.0000%"
+  }
+  measure: difference_ice {
+    type:  average
+    sql:1- ${TABLE}.pmid_net_written_premimum /${TABLE}.net_premium_ice ;;
     value_format: "0.0000%"
   }
 }

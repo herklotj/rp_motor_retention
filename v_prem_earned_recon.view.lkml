@@ -60,9 +60,19 @@ view: v_prem_earned_recon {
     sql: ${TABLE}.earned_premium_aap ;;
     value_format: "#.00;($#.00)"
   }
+  measure: ice_earned_prem {
+    type:  sum
+    sql: ${TABLE}.earned_premium_ice ;;
+    value_format: "#.00;($#.00)"
+  }
   measure: difference {
     type: average
     sql: 1-${TABLE}.earned_premium_pmid/${TABLE}.earned_premium_aap ;;
+    value_format: "0.00%"
+      }
+  measure: difference_ice {
+    type: average
+    sql: 1-${TABLE}.earned_premium_pmid/${TABLE}.earned_premium_ice ;;
     value_format: "0.0000%"
-  }
+    }
 }
