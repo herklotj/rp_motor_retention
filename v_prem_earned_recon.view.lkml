@@ -75,4 +75,14 @@ view: v_prem_earned_recon {
     sql: 1-${TABLE}.earned_premium_pmid/${TABLE}.earned_premium_ice ;;
     value_format: "0.0000%"
     }
+
+    measure: exposure_ice {
+      type: sum
+      sql: ${TABLE}.exposure_ice ;;
+    }
+
+  measure: exposure_pmid {
+    type: sum
+    sql: ${TABLE}.exposure_pmid ;;
+  }
 }

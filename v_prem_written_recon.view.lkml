@@ -27,7 +27,7 @@ view: v_prem_written_recon {
       quarter,
       year
     ]
-    sql: ${TABLE}.uw_month ;;
+    sql: CAST(${TABLE}.uw_month AS TIMESTAMP WITHOUT TIME ZONE);;
   }
 
   measure: count {
